@@ -50,7 +50,7 @@
         tarefasFiltradas = estado.tarefas;
     }
 
-    console.log('Switch ativo:', nomeDoCase);
+    console.log('Switch ativo:', estado.nomeDoCase);
     return tarefasFiltradas;
   }
 
@@ -68,7 +68,6 @@
   <div class="container">
     <Cabecalho :tarefas-pendentes="getTarefasPendentes().length" />
     <Formulario :trocar-filtro="evento => estado.filtro = evento.target.value" :tarefa-temp="estado.tarefaTemp" :edita-tarefa-temp="evento => estado.tarefaTemp = evento.target.value" :cadastra-tarefa="cadastraTarefa" />
-    <ListaDeTarefas :tarefas="getTarefasFiltradas()" :filtro-ativo="nomeDoCase" />
+    <ListaDeTarefas :tarefas="getTarefasFiltradas()" :filtro-ativo="estado.nomeDoCase" />
   </div>
 </template>
-
